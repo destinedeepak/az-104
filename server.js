@@ -10,7 +10,7 @@ app.use(express.json());
 await db.initializeDatabase();
 
 console.log(`Server starting in ${process.env.NODE_ENV || 'development'} mode`);
-console.log(`Using Key Vault for db-password: ${isUsingKeyVault() ? 'Yes (Managed Identity)' : 'No (using .env)'}`);
+console.log(`Using Key Vault for db-password1: ${isUsingKeyVault() ? 'Yes (Managed Identity)' : 'No (using .env)'}`);
 
 
 app.get('/products', async (req, res) => {

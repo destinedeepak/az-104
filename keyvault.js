@@ -54,11 +54,11 @@ export async function getConfig() {
   };
 
   if (IS_PROD) {
-    console.log('Production mode: fetching db-password from Key Vault...');
-    const pw = await getSecretFromVault('db-password');
+    console.log('Production mode: fetching db-password1 from Key Vault...');
+    const pw = await getSecretFromVault('db-password1');
     
     if (!pw) {
-      throw new Error("Key Vault secret 'db-password' not found or access denied");
+      throw new Error("Key Vault secret 'db-password1' not found or access denied");
     }
     
     config.dbPassword = pw;

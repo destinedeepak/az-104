@@ -16,7 +16,7 @@ console.log(`- DB User: ${config.dbUser}`);
 console.log(`- DB Password: ${config.dbPassword ? '***' + config.dbPassword.slice(-4) : 'not set'}\n`);
 
 if (isUsingKeyVault()) {
-  console.log('✓ Production mode - db-password fetched from Azure Key Vault');
+  console.log('✓ Production mode - db-password1 fetched from Azure Key Vault');
   console.log('  Using Managed Identity for authentication');
 } else {
   console.log('✓ Development mode - using .env file for all secrets');
@@ -32,7 +32,7 @@ console.log('   Secret permissions: Get, List');
 console.log('   Select principal: [Your App Service name]');
 console.log('\n3. Create Key Vault secret:');
 console.log('   Azure Portal → Key Vault → Secrets → Generate/Import');
-console.log('   Name: db-password');
+console.log('   Name: db-password1');
 console.log('   Value: [Your actual database password]');
 console.log('\n4. App Service Configuration → Application settings:');
 console.log('   - NODE_ENV=production');

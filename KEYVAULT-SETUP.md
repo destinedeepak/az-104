@@ -5,7 +5,7 @@ This application uses Azure Key Vault to securely manage database passwords in p
 ## Architecture Overview
 
 - **Development** (`NODE_ENV=development`): Uses `.env` file for all configuration
-- **Production** (`NODE_ENV=production`): Uses Azure Key Vault for `db-password`, App Service settings for other config
+- **Production** (`NODE_ENV=production`): Uses Azure Key Vault for `db-password1`, App Service settings for other config
 - **Fail-Fast**: If Key Vault is unreachable in production, the app throws an error instead of falling back
 
 ## Local Development Setup
@@ -42,7 +42,7 @@ The app will use local `.env` values and NOT connect to Key Vault.
 1. Go to Azure Portal → Your Key Vault (`az104-key-vault1`)
 2. Navigate to **Secrets** → **Generate/Import**
 3. Create a new secret:
-   - **Name**: `db-password`
+   - **Name**: `db-password1`
    - **Value**: Your actual database password (e.g., `myPassword@123`)
 4. Click **Create**
 
@@ -77,7 +77,7 @@ The app will use local `.env` values and NOT connect to Key Vault.
 1. Deploy your application to App Service
 2. Check the application logs:
    - Look for: `Production mode: Key Vault initialized at https://...`
-   - Look for: `Production mode: fetching db-password from Key Vault...`
+   - Look for: `Production mode: fetching db-password1 from Key Vault...`
 3. If there's an error accessing Key Vault, the app will fail with a clear error message
 
 ## Testing Key Vault Locally (Optional)
@@ -127,8 +127,8 @@ node test-keyvault.js
 - Verify Managed Identity is enabled on App Service
 - Check that the Key Vault name is correct in the URL
 
-### Error: "Key Vault secret 'db-password' not found or access denied"
-- Verify the secret exists in Key Vault with the exact name `db-password`
+### Error: "Key Vault secret 'db-password1' not found or access denied"
+- Verify the secret exists in Key Vault with the exact name `db-password1`
 - Check that App Service Managed Identity has access policy in Key Vault
 - Verify permissions include `Get` and `List` for secrets
 
