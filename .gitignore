@@ -1,3 +1,71 @@
-node_modules
+# Environment variables (CRITICAL - contains sensitive data)
 .env
+.env.local
+.env.*.local
+.env.production
+.env.development
+.env.test
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Database files
 *.db
+*.sqlite
+*.sqlite3
+products.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Testing
+coverage/
+.nyc_output/
+
+# Build outputs
+dist/
+build/
+*.tgz
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Azure specific
+.azure/
+local.settings.json
+
+# Sensitive documentation (if you store credentials here)
+CREDENTIALS.md
+SECRETS.md
